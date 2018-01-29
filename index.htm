@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Custom interval</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style>
+    body {
+        text-align: center;
+        font-family: 'Avenir Next';
+    }
+
+    #g1,
+    #g2,
+    #g3 {
+        width: 400px;
+        height: 320px;
+        display: inline-block;
+        margin: 1em;
+    }
+
+    p {
+        display: block;
+        width: 450px;
+        margin: 2em auto;
+        text-align: left;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="g1"></div>
+    <!-- <div id="g3"></div> -->
+    <!-- <p><button>per month</button><button>per year</button></p> -->
+    <p>
+        Developer happiness is one of the leading indicators of meaningful, impactful, and aligned productivity. As such it should be monitored and actioned upon when key indicators show change is required.
+    </p>
+    <p>
+        Developer happiness can be objectively measured by the number of voluntary exits per month and per year, in addition to monthly team health checks.
+    </p>
+    <div id="g2"></div>
+    <p>
+        Total staffing % level is a useful snapshot indicator of developer happiness.
+    </p>
+    <script src="raphael-2.1.4.min.js"></script>
+    <script src="justgage.js"></script>
+    <script>
+    var g1, g2, g3;
+
+    document.addEventListener("DOMContentLoaded", function(event) {
+        g1 = new JustGage({
+            id: "g1",
+            value: 2,
+            min: 0,
+            max: 60,
+            title: "Developer Happiness",
+            label: "voluntary exits"
+        });
+
+        g2 = new JustGage({
+            id: "g2",
+            value: 160,
+            min: 0,
+            max: 180,
+            title: "Developer Staffing",
+            label: "Total Developers"
+        });
+
+        // g3 = new JustGage({
+        //     id: "g3",
+        //     value: 120,
+        //     min: 50,
+        //     max: 100,
+        //     title: "Meltdown",
+        //     label: ""
+        // });
+
+        setInterval(function() {
+            // g1.refresh(getRandomInt(350, 980));
+            // g2.refresh(getRandomInt(0, 49));
+            // g3.refresh(getRandomInt(101, 200));
+        }, 2500);
+    });
+    </script>
+</body>
+
+</html>
